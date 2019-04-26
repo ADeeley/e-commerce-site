@@ -1,7 +1,6 @@
-
-<h2>{{data.name}}</h2>
-<h3>{{data.price.currency}} {{data.price.amount}}</h3>
-<img src="{{data.mainImage}}" alt="" srcset="">
-<div>ID: {{data.id}}</div>
-<div>SKU: {{data.SKU}}</div>
-<br>
+<div class="product-box">
+  <h2>{{data.name}}</h2>
+  <h3>{{data.price.currency}} {{data.price.amount}}</h3>
+  <img src="{{data.mainImage}}" alt="" srcset="">
+  <div [ngClass]="{'in-stock': data.stockStatus === 'IN STOCK'}">{{data.stockStatus}}</div>
+</div>
