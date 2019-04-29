@@ -3,8 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { ProductListingsService } from '../product-listings.service'
 
+interface CurrencyObject {
+  currency: string;
+  amount: string;
+}
 interface ProductObject {
   readonly SKU: string;
+  readonly name: string;
+  readonly price: {
+    [key: string]: CurrencyObject
+  };
+  readonly sizes: Array<string>;
 }
 interface ProductsArray {
   readonly data?: Array<ProductObject>;
@@ -16,7 +25,12 @@ interface ProductsArray {
   styleUrls: ['./pdp.component.scss']
 })
 export class PdpComponent implements OnInit {
-  product: object;
+  product: ProductObject = {
+    SKU: '',
+    name: '',
+    price: {},
+    sizes: []
+  };
   SKU: string;
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private productListingService: ProductListingsService) {
