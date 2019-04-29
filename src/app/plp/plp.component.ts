@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductListingsService } from '../product-listings.service'
+import { ProductListingsService } from '../product-listings.service';
 
 interface ProductsData {
   data?: object;

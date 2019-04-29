@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { PlpComponent } from './plp/plp.component';
 import { ProductComponent } from './product/product.component';
 import { PdpComponent } from './pdp/pdp.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { PdpComponent } from './pdp/pdp.component';
     PlpComponent,
     ProductComponent,
     PdpComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
