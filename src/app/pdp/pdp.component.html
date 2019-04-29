@@ -1,2 +1,8 @@
 <h1>Product Display</h1>
-  <h2>{{product[id]}}</h2>
+<h2>{{product.name}}</h2>
+
+<div class="product-box">
+  <h3>{{product.price.currency}} {{product.price.amount}}</h3>
+  <img src="{{product.mainImage}}" alt="" srcset="">
+  <div>{{product.stockStatus}}</div>
+</div>
