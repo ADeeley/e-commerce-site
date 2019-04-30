@@ -1,5 +1,10 @@
-<h1>Today's Products</h1>
-<ul>
-  <app-product *ngFor="let product of products" [data]="product"></app-product>A
-</ul>
-
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Today's Products</h1>
+      <ul>
+        <app-product *ngFor="let product of products" [data]="product"></app-product>
+      </ul>
+    </div>
+  </div>
+</div>
