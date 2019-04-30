@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { ProductObject } from './shared/models/product.model';
 
 export interface ProductsData {
-  readonly data?: object;
+  readonly data: Array<ProductObject>;
 }
 
 @Injectable({

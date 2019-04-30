@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductListingsService } from '../product-listings.service';
-
-interface ProductsData {
-  data?: object;
-}
+import { ProductListingsService, ProductsData} from '../product-listings.service';
 
 @Component({
   selector: 'app-plp',
@@ -12,14 +8,15 @@ interface ProductsData {
 })
 export class PlpComponent implements OnInit {
 
-  products: ProductsData;
+  products: object;
 
   constructor(private productListingService: ProductListingsService) {
   }
 
   ngOnInit() {
-    this.productListingService.getProducts().subscribe(
-      (data: ProductsData = null) => this.products = data.data
-    );
+    this.productListingService.getProducts()
+      .subscribe(
+        (data: ProductsData) => this.products = data.data
+      );
   }
 }

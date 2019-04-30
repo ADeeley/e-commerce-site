@@ -1,23 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { ProductListingsService } from '../product-listings.service'
+import { ProductListingsService, ProductsData} from '../product-listings.service';
+import { ProductObject } from '../shared/models/product.model';
 
-interface CurrencyObject {
-  currency: string;
-  amount: string;
-}
-interface ProductObject {
-  readonly SKU: string;
-  readonly name: string;
-  readonly price: {
-    [key: string]: CurrencyObject
-  };
-  readonly sizes: Array<string>;
-}
-interface ProductsArray {
-  readonly data?: Array<ProductObject>;
-}
 
 @Component({
   selector: 'app-pdp',
@@ -25,12 +11,7 @@ interface ProductsArray {
   styleUrls: ['./pdp.component.scss']
 })
 export class PdpComponent implements OnInit {
-  product: ProductObject = {
-    SKU: '',
-    name: '',
-    price: {},
-    sizes: []
-  };
+  product = new ProductObject();
   SKU: string;
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private productListingService: ProductListingsService) {
@@ -38,11 +19,12 @@ export class PdpComponent implements OnInit {
 
   ngOnInit() {
     this.SKU = this.route.snapshot.params.sku;
-    this.productListingService.getProducts().subscribe(
-      (data: ProductsArray = null) => {
-        this.product = data.data.filter((dataSku) => this.SKU === dataSku.SKU)[0];
-        console.log(this.product);
-      }
-    );
+    this.productListingService.getProducts()
+      .subscribe(
+        (data: ProductsData) => {
+          console.log(data);
+          this.product = data.data.filter(dataSku => this.SKU === dataSku.SKU)[0];
+        }
+      );
   }
 }
