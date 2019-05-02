@@ -10,6 +10,8 @@ import { PdpComponent } from './pdp/pdp.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CartContentComponent } from './cart/cart-content/cart-content.component';
+import { CartService } from './shared/services/cart.service';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent,
+    CartContentComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
