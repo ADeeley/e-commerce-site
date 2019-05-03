@@ -19,9 +19,9 @@ export class CartService {
     };
 
     // If we have a product in the cart already with a matching SKU
-    const existingProduct = this.currentCart.filter(product => product.SKU === newProduct.SKU)[0];
+    const existingProduct = this.currentCart.filter(product => product.SKU === newProduct.SKU && product.size === size)[0];
 
-    if (existingProduct && existingProduct.size === size) {
+    if (existingProduct) {
       existingProduct.qty++;
       return;
     }
