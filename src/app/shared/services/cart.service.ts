@@ -8,10 +8,14 @@ export class CartService {
 
   currentCart: ProductObject[] = [];
 
-  constructor() { }
+  constructor() { console.log('aight'); }
 
   addProduct(product: ProductObject) {
     this.currentCart.push(product);
     console.log(this.currentCart);
+  }
+
+  getCurrentCart() {
+    return this.currentCart.slice();
   }
 }

@@ -1,3 +1,13 @@
-<p>
-  cart-content works!
-</p>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Your Cart</h1>
+    <div class="row list-group-item clearfix" *ngFor="let cartProduct of cartProducts">
+      <div class="col-md-6">
+        <img [src]="cartProduct.mainImage" alt="" style="max-height: 50px;">
+        <p>{{cartProduct.price.currency}} {{cartProduct.price.amount}}</p>
+      </div>
+      <div class="col-md-6">
+        <p>{{cartProduct.name}}</p>
+      </div>
+    </div>
+  </div>
