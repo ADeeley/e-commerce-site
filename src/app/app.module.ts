@@ -4,16 +4,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PlpComponent } from './plp/plp.component';
+import { PlpComponent } from './pages/plp/plp.component';
 import { ProductComponent } from './product/product.component';
-import { PdpComponent } from './pdp/pdp.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { CartContentComponent } from './cart/cart-content/cart-content.component';
+import { PdpComponent } from './pages/pdp/pdp.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { CartContentComponent } from './pages/cart/cart-content/cart-content.component';
 import { CartService } from './shared/services/cart.service';
-import { HomepageComponent } from './homepage/homepage.component';
-import { SizesComponent } from './pdp/sizes/sizes.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { SizesComponent } from './pages/pdp/sizes/sizes.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
