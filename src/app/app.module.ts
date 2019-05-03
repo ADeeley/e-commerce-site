@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlpComponent } from './pages/plp/plp.component';
-import { ProductComponent } from './product/product.component';
+
 import { PdpComponent } from './pages/pdp/pdp.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
@@ -15,6 +15,7 @@ import { CartService } from './shared/services/cart.service';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { SizesComponent } from './pages/pdp/sizes/sizes.component';
 import { FormsModule } from '@angular/forms';
+import { ProductComponent } from './pages/plp/product/product.component';
 
 @NgModule({
   declarations: [
