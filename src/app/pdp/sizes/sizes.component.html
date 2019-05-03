@@ -1,3 +1,4 @@
-<select class="form-control">
-  <option *ngFor="let size of sizesAvailable" value="size">{{size}}</option>
+<select (change)="onSizeSelected($event.target.value)" class="form-control">
+  <option value="" disabled selected>Please select a size</option>
+  <option *ngFor="let size of sizesAvailable" [value]="size">{{size}}</option>
 </select>

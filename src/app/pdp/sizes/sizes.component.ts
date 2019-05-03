@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sizes',
@@ -7,6 +7,12 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 })
 export class SizesComponent {
   @Input() sizesAvailable: number[];
+  @Output() sizeSelected = new EventEmitter<number>();
+
+  onSizeSelected(size) {
+    this.sizeSelected.emit(size);
+    console.log(size);
+  }
 
   constructor() { }
 

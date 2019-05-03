@@ -14,6 +14,7 @@ import { CartContentComponent } from './cart/cart-content/cart-content.component
 import { CartService } from './cart/services/cart.service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SizesComponent } from './pdp/sizes/sizes.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SizesComponent } from './pdp/sizes/sizes.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [CartService],
   bootstrap: [AppComponent]

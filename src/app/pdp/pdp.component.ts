@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { ProductListingsService, ProductsData } from '../shared/services/product-listings.service';
 import { ProductObject } from '../shared/models/product.model';
@@ -14,6 +13,7 @@ import { CartService } from '../cart/services/cart.service';
 export class PdpComponent implements OnInit {
   product = new ProductObject();
   SKU: string;
+  sizeSelected: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -33,6 +33,10 @@ export class PdpComponent implements OnInit {
   }
 
   addProduct() {
-    this.cartService.addProduct(this.product);
+    this.cartService.addProduct(this.product, 1, this.sizeSelected);
+  }
+
+  updateSizeSelected(size) {
+    this.sizeSelected = size;
   }
 }
