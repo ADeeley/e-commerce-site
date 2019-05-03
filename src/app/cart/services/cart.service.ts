@@ -39,7 +39,7 @@ export class CartService {
   }
 
   getNumberOfProductsInCart() {
-    return this.currentCart.length;
+    return this.currentCart.reduce((total, productObj) => total + productObj.qty, 0);
   }
 
 }
