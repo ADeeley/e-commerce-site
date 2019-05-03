@@ -11,13 +11,21 @@ export class CartService {
 
   constructor() { console.log('aight'); }
 
-  addProduct(product: ProductObject, qty: number, size: number) {
+  addProduct(newProduct: ProductObject, qty: number, size: number) {
     const cartProduct = {
-      ...product,
+      ...newProduct,
       qty,
       size,
     };
-    console.log(product)
+
+    // If we have a product in the cart already with a matching SKU
+    const existingProduct = this.currentCart.filter(product => product.SKU === newProduct.SKU)[0];
+
+    if (existingProduct && existingProduct.size === size) {
+      existingProduct.qty++;
+      return;
+    }
+
     this.currentCart.push(cartProduct);
     console.log(this.currentCart);
   }
