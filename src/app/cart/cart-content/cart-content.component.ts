@@ -19,9 +19,9 @@ export class CartContentComponent implements OnInit {
     this.cartProducts = this.cartService.getCurrentCart();
   }
 
-  removeProduct(sku) {
+  removeProduct(sku, size) {
     console.log(`Remove product with SKU: ${sku}`);
-    this.cartService.removeProduct(sku);
+    this.cartService.removeProduct(sku, size);
     this.cartProducts = this.cartService.getCurrentCart();
   }
 }

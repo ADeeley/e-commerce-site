@@ -30,8 +30,8 @@ export class CartService {
     console.log(this.currentCart);
   }
 
-  removeProduct(sku) {
-    this.currentCart = this.currentCart.filter(product => product.SKU !== sku);
+  removeProduct(sku, size) {
+    this.currentCart = this.currentCart.filter(product => !(product.SKU === sku && product.size === size));
   }
 
   getCurrentCart() {
