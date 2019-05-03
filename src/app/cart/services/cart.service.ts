@@ -22,4 +22,9 @@ export class CartService {
   getCurrentCart() {
     return this.currentCart.slice();
   }
+
+  getNumberOfProductsInCart() {
+    return this.currentCart.length;
+  }
+
 }
