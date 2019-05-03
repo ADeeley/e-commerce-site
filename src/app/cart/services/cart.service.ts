@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ProductObject } from '../models/product.model';
+import { ProductObject } from 'src/app/shared/models/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,10 @@ export class CartService {
   addProduct(product: ProductObject) {
     this.currentCart.push(product);
     console.log(this.currentCart);
+  }
+
+  removeProduct(sku) {
+    this.currentCart = this.currentCart.filter(product => product.SKU !== sku);
   }
 
   getCurrentCart() {
