@@ -4,14 +4,15 @@
   </div>
   <div class="navbar-default">
     <ul class="nav navbar-nav">
-      <li><a class="nav-link" routerLink="/products/list">Our things</a></li>
+      <li routerLinkActive="active"><a class="nav-link" routerLink="/products/list">Our things</a></li>
+      <li routerLinkActive="active"><a class="nav-link" routerLink="/about-us">About us</a></li>
     </ul>
   </div>
   <ul class="nav navbar-nav navbar-right">
-    <li>
+    <li routerLinkActive="active">
       <a class="nav-link" routerLink="/cart">
         <i class="fa fa-shopping-cart fa-2x"></i>
-          ({{productsInCart()}})
+        ({{productsInCart()}})
       </a>
     </li>
   </ul>

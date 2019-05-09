@@ -16,6 +16,7 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { SizesComponent } from './pages/pdp/sizes/sizes.component';
 import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './pages/plp/product/product.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ProductComponent } from './pages/plp/product/product.component';
     CartContentComponent,
     HomepageComponent,
     SizesComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
