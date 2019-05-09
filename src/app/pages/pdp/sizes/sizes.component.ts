@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-sizes',
@@ -7,10 +8,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SizesComponent {
   @Input() sizesAvailable: number[];
-  @Output() sizeSelected = new EventEmitter<number>();
+  @Output() sizeSelected = new Subject<number>();
 
   onSizeSelected(size) {
-    this.sizeSelected.emit(size);
+    this.sizeSelected.next(size);
     console.log(size);
   }
 
