@@ -4,11 +4,11 @@ import { CartService } from 'src/app/shared/services/cart.service';
 import { ProductObject } from 'src/app/shared/models/product.model';
 
 @Component({
-  selector: 'app-sizes',
-  templateUrl: './sizes.component.html',
-  styleUrls: ['./sizes.component.scss']
+  selector: 'app-product-form',
+  templateUrl: './product-form.component.html',
+  styleUrls: ['./product-form.component.scss']
 })
-export class SizesComponent {
+export class ProductFormComponent {
   @Input() product: ProductObject;
   quantity = 1;
   size: string;
