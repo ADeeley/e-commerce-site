@@ -1,4 +1,10 @@
-<select (change)="onSizeSelected($event.target.value)" class="form-control">
-  <option value="" disabled selected>Please select a size</option>
-  <option *ngFor="let size of sizesAvailable" [value]="size">{{size}}</option>
-</select>
+<form (ngSubmit)="addProduct(f)" #f="ngForm">
+  <label for="size">Size</label>
+  <select class="form-control" [ngModel]="sizePlaceholder" name="size" required>
+    <option value="" disabled selected>Please select a size</option>
+    <option *ngFor="let size of product.sizes" [value]="size">{{size}}</option>
+  </select>
+  <label for="qty">Quantity</label>
+  <input class="form-control" type="number" id="qty" [(ngModel)]="quantity" name="quantity">
+  <button class="btn btn-success">Add to cart</button>
+</form>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductListingsService, ProductsData } from '../../shared/services/product-listings.service';
 import { ProductObject } from '../../shared/models/product.model';
-import { CartService } from '../../shared/services/cart.service';
 
 
 @Component({
@@ -13,12 +12,11 @@ import { CartService } from '../../shared/services/cart.service';
 export class PdpComponent implements OnInit {
   product = new ProductObject();
   SKU: string;
-  sizeSelected: number;
 
   constructor(
     private route: ActivatedRoute,
     private productListingService: ProductListingsService,
-    private cartService: CartService) {
+  ) {
   }
 
   ngOnInit() {
@@ -30,13 +28,5 @@ export class PdpComponent implements OnInit {
           this.product = data.data.filter(dataSku => this.SKU === dataSku.SKU)[0];
         }
       );
-  }
-
-  addProduct() {
-    this.cartService.addProduct(this.product, 1, this.sizeSelected);
-  }
-
-  updateSizeSelected(size) {
-    this.sizeSelected = size;
   }
 }

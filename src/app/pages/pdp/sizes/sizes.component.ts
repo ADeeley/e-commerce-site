@@ -1,5 +1,7 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Component, Input, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { CartService } from 'src/app/shared/services/cart.service';
+import { ProductObject } from 'src/app/shared/models/product.model';
 
 @Component({
   selector: 'app-sizes',
@@ -7,14 +9,19 @@ import { Subject } from 'rxjs';
   styleUrls: ['./sizes.component.scss']
 })
 export class SizesComponent {
-  @Input() sizesAvailable: number[];
-  @Output() sizeSelected = new Subject<number>();
+  @Input() product: ProductObject;
+  quantity = 1;
+  size: string;
+  sizePlaceholder = '';
 
-  onSizeSelected(size) {
-    this.sizeSelected.next(size);
-    console.log(size);
+
+  constructor(private cartService: CartService) { }
+
+  addProduct(form: NgForm) {
+    if (form.invalid) {
+      console.log('invalid form');
+      return;
+    }
+    this.cartService.addProduct(this.product, this.quantity, +this.size);
   }
-
-  constructor() { }
-
 }

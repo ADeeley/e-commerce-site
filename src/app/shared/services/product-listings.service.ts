@@ -21,8 +21,8 @@ export class ProductListingsService {
       console.error('An error occurred:', error.error.message);
     } else {
       console.error(
-        `Platform returned code ${error.status}, ` +
-        `body was: ${error.error}`);
+        `Platform returned code ${error.status}, body was: ${error.error}`
+      );
     }
     // return an observable with a user-facing error message
     return throwError(
