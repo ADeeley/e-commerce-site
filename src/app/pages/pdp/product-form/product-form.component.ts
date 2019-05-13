@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CartService } from 'src/app/shared/services/cart.service';
 import { ProductObject } from 'src/app/shared/models/product.model';
@@ -11,18 +11,16 @@ import { ProductObject } from 'src/app/shared/models/product.model';
 export class ProductFormComponent {
   @Input() product: ProductObject;
   quantity = 1;
-  size: string;
-  sizePlaceholder = '';
+  sizeSelected = '';
   failedSubmit = false;
 
   constructor(private cartService: CartService) { }
 
   addProduct(form: NgForm) {
     if (form.invalid) {
-      console.log('invalid form');
       this.failedSubmit = true;
       return;
     }
-    this.cartService.addProduct(this.product, this.quantity, +this.size);
+    this.cartService.addProduct(this.product, this.quantity, +this.sizeSelected);
   }
 }

@@ -42,4 +42,8 @@ export class CartService {
     return this.currentCart.reduce((total, productObj) => total + productObj.qty, 0);
   }
 
+  getCartTotal() {
+    return this.currentCart.reduce((total, productObj) => total + (+productObj.price.amount * productObj.qty), 0);
+  }
+
 }

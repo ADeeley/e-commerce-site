@@ -1,6 +1,6 @@
 <form (ngSubmit)="addProduct(f)" #f="ngForm">
   <label for="size">Size</label>
-  <select class="form-control" [ngModel]="sizePlaceholder" name="size" required #size="ngModel">
+  <select class="form-control" [(ngModel)]="sizeSelected" name="size" required #size="ngModel">
     <option value="" disabled selected>Please select a size</option>
     <option *ngFor="let size of product.sizes" [value]="size">{{size}}</option>
   </select>

@@ -10,6 +10,7 @@ import { CartProductObject } from 'src/app/shared/models/cart-product.model';
 export class CartContentComponent implements OnInit {
 
   cartProducts: CartProductObject[];
+  total: number;
 
   constructor(private cartService: CartService) {
   }
@@ -17,6 +18,7 @@ export class CartContentComponent implements OnInit {
   ngOnInit() {
     console.log(this.cartService.currentCart);
     this.cartProducts = this.cartService.getCurrentCart();
+    this.total = this.cartService.getCartTotal();
   }
 
   removeProduct(sku, size) {

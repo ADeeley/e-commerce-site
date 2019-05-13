@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductListingsService, ProductsData} from '../../shared/services/product-listings.service';
+import { ProductListingsService, ProductsData } from '../../shared/services/product-listings.service';
 
 @Component({
   selector: 'app-plp',

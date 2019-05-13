@@ -3,7 +3,7 @@
     <div class="col-sm-12">
       <h1>Your Cart</h1>
       <div *ngIf="cartProducts.length > 0; else noProducts">
-        <div class="row list-group-item clearfix" *ngFor="let cartProduct of cartProducts">
+        <!--         <div class="row list-group-item clearfix" *ngFor="let cartProduct of cartProducts">
           <div class="col-md-6">
             <img [src]="cartProduct.mainImage" alt="" style="max-height: 50px;">
             <p>{{cartProduct.price.currency}} {{cartProduct.price.amount}}</p>
@@ -15,7 +15,34 @@
             <p>{{cartProduct.name}}</p>
             <button class="btn btn-danger" (click)="removeProduct(cartProduct.SKU ,cartProduct.size)">Remove Product</button>
           </div>
-        </div>
+        </div> -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th scope="col">Product</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Size</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cartProduct of cartProducts">
+              <th><img class="img-thumbnail" [src]="cartProduct.mainImage" alt=""></th>
+              <th scope="row">{{cartProduct.name}}</th>
+              <td>{{cartProduct.qty}}</td>
+              <td>{{cartProduct.size}}</td>
+              <td>&pound;{{cartProduct.price.amount}}</td>
+            </tr>
+            <tr class="table-dark">
+              <th>Total</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>&pound;{{total}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <ng-template #noProducts>
         <p>There are no products in your cart!</p>
