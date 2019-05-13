@@ -13,13 +13,14 @@ export class SizesComponent {
   quantity = 1;
   size: string;
   sizePlaceholder = '';
-
+  failedSubmit = false;
 
   constructor(private cartService: CartService) { }
 
   addProduct(form: NgForm) {
     if (form.invalid) {
       console.log('invalid form');
+      this.failedSubmit = true;
       return;
     }
     this.cartService.addProduct(this.product, this.quantity, +this.size);
