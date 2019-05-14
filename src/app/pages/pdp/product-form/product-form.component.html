@@ -1,11 +1,17 @@
-<form (ngSubmit)="addProduct(f)" #f="ngForm">
-  <label for="size">Size</label>
-  <select class="form-control" [(ngModel)]="sizeSelected" name="size" required #size="ngModel">
-    <option value="" disabled selected>Please select a size</option>
-    <option *ngFor="let size of product.sizes" [value]="size">{{size}}</option>
-  </select>
-  <p class="form-helper" *ngIf="!size.valid && size.touched || !size.valid && failedSubmit">Please select a size</p>
-  <label for="qty">Quantity</label>
-  <input class="form-control" type="number" id="qty" [(ngModel)]="quantity" name="quantity">
-  <button class="btn btn-success">Add to cart</button>
-</form>
+<hr>
+<div class="row">
+  <div class="col-sm-6">
+    <form (ngSubmit)="addProduct(f)" #f="ngForm">
+      <label for="size">Size</label>
+      <select class="form-control" [(ngModel)]="sizeSelected" name="size" required #size="ngModel">
+        <option value="" disabled selected>Please select a size</option>
+        <option *ngFor="let size of product.sizes" [value]="size">{{size}}</option>
+      </select>
+      <p class="form-helper" *ngIf="!size.valid && size.touched || !size.valid && failedSubmit">Please select a size</p>
+      <label class="mt-2" for="qty">Quantity</label>
+      <input class="form-control" type="number" id="qty" [(ngModel)]="quantity" name="quantity">
+      <button class="btn btn-success mt-4">Add to cart</button>
+    </form>
+    <hr>
+  </div>
+</div>

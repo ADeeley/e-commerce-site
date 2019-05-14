@@ -22,5 +22,6 @@ export class ProductFormComponent {
       return;
     }
     this.cartService.addProduct(this.product, this.quantity, +this.sizeSelected);
+    alert(`Added ${this.product.name} * ${this.quantity} to the cart.`);
   }
 }
